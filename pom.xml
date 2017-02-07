@@ -107,6 +107,7 @@
                     <jvmFlags>
                         <jvmFlag>-Ddatastore.backing_store=${project.basedir}/local_db.bin</jvmFlag>
                     </jvmFlags>
+                    <address>0.0.0.0</address>
                     <port>8090</port>
                 </configuration>
 
