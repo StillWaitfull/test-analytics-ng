@@ -210,6 +210,16 @@ public class Capability implements Serializable, HasLabels {
     return null;
   }
 
+
+  public boolean checkLabelPresent(String accLabelId) {
+    for (AccLabel l : accLabels) {
+      if (accLabelId.equals(l.getLabelText())) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   @Override
   public void setAccLabels(List<AccLabel> labels) {
     this.accLabels = labels;

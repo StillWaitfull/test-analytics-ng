@@ -47,6 +47,7 @@ import com.google.testing.testify.risk.frontend.model.Capability;
 import com.google.testing.testify.risk.frontend.model.Component;
 import com.google.testing.testify.risk.frontend.model.Pair;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -232,10 +233,15 @@ public class CapabilitiesViewImpl extends Composite implements CapabilitiesView 
           && capabilities != null) {
       Component component = selectedIntersection.getFirst();
       Attribute attribute = selectedIntersection.getSecond();
-
+      List<Capability> array = new ArrayList<Capability>();
+      for (Capability capability : capabilities) {
+        if (capability.checkLabelPresent("auto"))
+          array.add(capability);
+      }
+      capabilities.removeAll(array);
+      capabilities.addAll(array);
       capabilitiesContainer.setVisible(true);
       capabilitiesContainerTitle.setText(component.getName() + " is " + attribute.getName());
-
       List<EditCapabilityWidget> widgets = Lists.newArrayList();
       for (final Capability capability : capabilities) {
         // If we're interested in this capability (it matches our current filter).
