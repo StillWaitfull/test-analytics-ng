@@ -37,7 +37,7 @@ public class Component implements Serializable, HasLabels {
   private static final AccElementType ELEMENT_TYPE = AccElementType.COMPONENT;
 
   @PrimaryKey
-  @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
+  @Persistent(valueStrategy = IdGeneratorStrategy.SEQUENCE)
   private Long componentId;
 
   @Persistent

@@ -37,7 +37,7 @@ public class Attribute implements Serializable, HasLabels {
   private static final AccElementType ELEMENT_TYPE = AccElementType.ATTRIBUTE;
 
   @PrimaryKey
-  @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
+  @Persistent(valueStrategy = IdGeneratorStrategy.SEQUENCE)
   private Long attributeId;
 
   @Persistent
